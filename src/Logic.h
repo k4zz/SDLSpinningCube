@@ -18,16 +18,12 @@ struct vector2
 class Logic
 {
 public:
-    Logic(size_t _screeWidth, size_t _screenHeight, float _cubeSize)
+    Logic(size_t _screeWidth, size_t _screenHeight)
             : screenWidth{_screeWidth}
             , screenHeight{_screenHeight}
-            , cubeSize{_cubeSize}
     {};
 
-    size_t screenWidth;
-    size_t screenHeight;
 
-    float cubeSize{};
 
     float pitch{};
     float yaw{};
@@ -36,6 +32,8 @@ public:
     vector2<int> projectToScreen(vector3<float> point);
 
 private:
+    size_t screenWidth;
+    size_t screenHeight;
 
     float calculateX(vector3<float> vec);
     float calculateY(vector3<float> vec);

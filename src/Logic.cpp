@@ -27,7 +27,7 @@ vector3<float> Logic::rotatePoint(vector3<float> vec)
     vector3<float> rotatedPoint;
     rotatedPoint.x = calculateX(vec);
     rotatedPoint.y = calculateY(vec);
-    rotatedPoint.z = calculateZ(vec) + 41;
+    rotatedPoint.z = calculateZ(vec);
     return rotatedPoint;
 }
 
@@ -37,7 +37,7 @@ vector2<int> Logic::projectToScreen(vector3<float> point)
     vector2<int> imgPoint = {0, 0};
 
     //TODO: why?
-    float focal = 1 / rotatedPoint.z;
+    float focal = 1 / (rotatedPoint.z + 41);
 
     //TODO: why?
     imgPoint.x = static_cast<int>(screenWidth / 2.f + focal * 40.f * rotatedPoint.x);

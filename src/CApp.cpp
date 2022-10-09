@@ -59,7 +59,7 @@ bool CApp::onInit()
     int width, height;
     SDL_GetWindowSize(mWindow, &width, &height);
 
-    mLogic = new Logic(width, height, 20.f);
+    mLogic = new Logic(width, height);
 
     return true;
 }
@@ -76,7 +76,7 @@ void CApp::onLoop()
     mLogic->yaw     += 0.02f;
     mLogic->roll    += 0.03f;
 
-    auto cubeSize = mLogic->cubeSize;
+    auto cubeSize = 20.f;
     pointA = mLogic->projectToScreen({-cubeSize, -cubeSize, -cubeSize});
     pointB = mLogic->projectToScreen({cubeSize, -cubeSize, -cubeSize});
     pointC = mLogic->projectToScreen({cubeSize, cubeSize, -cubeSize});
