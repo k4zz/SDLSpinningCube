@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 
-project(SDLTemplate)
+project(SDLSpinningCube)
 
 find_package(SDL2 REQUIRED)
 
